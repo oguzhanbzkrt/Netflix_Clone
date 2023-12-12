@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-p3ouws143u^5k!x%d!sbxi^qh5^z)1@vb4i@p@_ev+7-7$awid
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['oguzhanbzkrt.pythonanywhere.com']
 
 
 # Application definition
@@ -124,6 +124,7 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     BASE_DIR / 'static'
 ]
+STATIC_ROOT = os.path.join(BASE_DIR/ 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
@@ -131,8 +132,8 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #media
-# MEDIA_URL = ""
-# MEDIA_ROOT = os.path.join(BASE_DIR / 'media'),
+MEDIA_URL = ""
+MEDIA_ROOT = os.path.join(BASE_DIR / 'media')
 
 
 from django.contrib.messages import constants as messages
