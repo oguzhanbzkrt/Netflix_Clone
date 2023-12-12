@@ -1,0 +1,91 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block content %}
+<style>
+    #footerHelp {
+        margin-top: 200px;
+        background-color: black;
+        opacity: 70%;
+        max-height: 200px;
+    }
+
+    .formHeight {
+        height: 400px;
+        margin-top: 100px;
+    }
+</style>
+
+<body id="BackImg">
+    <header class="netflixSignIn">
+        <nav class="navbar">
+            <div class="container">
+                <a href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}" alt=""></a>
+            </div>
+        </nav>
+        <div class="SignInBody">
+            <div class="container formHeight">
+                <form action="" method="POST" enctype="multipart/form-data" class="w-50 m-auto text-light">
+                    {% csrf_token %}
+                    {% comment %} {{form}} {% endcomment %}
+                    
+                    <label for="">İsim</label>
+                    <input type="text" name="isim" class="form-control">
+                    <label for="">Soyisim</label>
+                    <input type="text" name="soyisim" class="form-control">
+                    <label for="">Email</label>
+                    <input type="email" name="email" class="form-control">
+                    <label for="">Resim</label>
+                    <input type="file" name="resim" class="form-control">
+                    <label for="">Telefon Numarası</label>
+                    <input type="tel" name="tel" class="form-control">
+                    <label for="">Doğum Tarihi</label>
+                    <input type="date" name="dogum" class="form-control">
+                    <label for="">Şifre</label>
+                    <input type="password" name="sifre1" class="form-control">
+                    <label for="">Şifre Onay</label>
+                    <input type="password" name="sifre2" class="form-control">
+
+
+
+                    <input type="submit" value="Kayıt Ol" class="btn btn-danger mt-3">
+                </form>
+            </div>
+        </div>
+    </header>
+    <footer class="Help p-5" id="footerHelp">
+        <div class="container">
+            <ul>
+                <li>
+                    <p>Sorularınız mı var? <span class="text-decoration-underline">0850-390-7444</span> numaralı
+                        telefonu arayın</p>
+                </li>
+            </ul>
+            <div class="row">
+                <div class="col-3 lh-lg">
+                    <ul>
+                        <li><a href="">SSS</a></li>
+                        <li><a href="">Çerez Tercihleri</a></li>
+                    </ul>
+                </div>
+                <div class="col-3 lh-lg">
+                    <ul>
+                        <li><a href="">Yardım Merkezi</a></li>
+                        <li><a href="">Kurumsal Bilgiler</a></li>
+                    </ul>
+                </div>
+                <div class="col-3 lh-lg">
+                    <ul>
+                        <li><a href="">Kullanım Koşulları</a></li>
+                    </ul>
+                </div>
+                <div class="col-3 lh-lg">
+                    <ul>
+                        <li><a href="">Gizlilik</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+{% endblock content %}

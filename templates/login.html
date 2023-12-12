@@ -1,0 +1,97 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block content %}
+<style>
+    #footerHelp {
+        margin-top: 200px;
+        background-color: black;
+        opacity: 70%;
+        max-height: 200px;
+    }
+</style>
+
+<body id="BackImg">
+    <header class="netflixSignIn">
+        <nav class="navbar">
+            <div class="container">
+                <a href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}" alt=""></a>
+            </div>
+        </nav>
+        <div class="SignInBody">
+            <div class="container">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                    <div class="row justify-content-center align-items-center MyHeight">
+                        <div class="col-4 mt-2 pt-5 bg-black bg-opacity-50">
+                            <h2 class="text-white justify-content-start text-start fs-1 mb-4">Oturum Aç</h2>
+                            <div class="form-floating mb-5">
+                                <input type="text" name="username" class="form-control bg-secondary bg-gradient"
+                                    id="floatingInput" placeholder=".">
+                                <label for="floatingInput">Email adresinizi giriniz</label>
+                            </div>
+                            <div class="form-floating">
+                                <input type="password" name="password" class="form-control bg-secondary bg-gradient"
+                                    id="floatingPassword" placeholder=".">
+                                <label for="floatingPassword">Parola</label>
+                            </div>
+                            <div class="d-grid gap-2 col-12 mt-5">
+
+                                <a href="{% url 'index' %}"><button class="btn btn-danger p-3" type="submit">Oturum Aç</button></a>
+
+                                <div class="form-check d-flex justify-content-between">
+                                    <div class="RememberMe">
+                                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                        <label class="form-check-label text-white-50" for="flexCheckDefault">
+                                            Beni hatırla
+                                        </label>
+                                    </div>
+                                    <p><a class="text-white-50" href="#">Yardım ister misiniz?</a></p>
+                                </div>
+                                <p>Netflix'e katılmak ister misiniz? <a class="text-white" href="#"><b>Şimdi
+                                            kaydolun.</b></a></p>
+                                <p>Bu sayfa robot olmadığınızı kanıtlamak için Google reCAPTCHA tarafından korunuyor. <a
+                                        href="#">Daha fazlasını öğrenin.</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </header>
+    <footer class="Help p-5" id="footerHelp">
+        <div class="container">
+            <ul>
+                <li>
+                    <p>Sorularınız mı var? <span class="text-decoration-underline">0850-390-7444</span> numaralı
+                        telefonu arayın</p>
+                </li>
+            </ul>
+            <div class="row">
+                <div class="col-3 lh-lg">
+                    <ul>
+                        <li><a href="">SSS</a></li>
+                        <li><a href="">Çerez Tercihleri</a></li>
+                    </ul>
+                </div>
+                <div class="col-3 lh-lg">
+                    <ul>
+                        <li><a href="">Yardım Merkezi</a></li>
+                        <li><a href="">Kurumsal Bilgiler</a></li>
+                    </ul>
+                </div>
+                <div class="col-3 lh-lg">
+                    <ul>
+                        <li><a href="">Kullanım Koşulları</a></li>
+                    </ul>
+                </div>
+                <div class="col-3 lh-lg">
+                    <ul>
+                        <li><a href="">Gizlilik</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+{% endblock content %}

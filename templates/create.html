@@ -1,0 +1,75 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block content %}
+<style>
+    #footerHelp {
+        margin-top: 145px;
+        background-color: black;
+        opacity: 70%;
+        max-height: 200px;
+    }
+
+    .formHeight {
+        height: 400px;
+        margin-top: 100px;
+    }
+</style>
+
+<body id="BackImg">
+    <header class="netflixSignIn">
+        <nav class="navbar">
+            <div class="container">
+                <a href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}" alt=""></a>
+            </div>
+        </nav>
+        <div class="SignInBody">
+            <div class="container formHeight">
+                <form action="" method="POST" enctype="multipart/form-data" class="w-50 m-auto text-light mt-5 pt-5 ">
+                    <h1 class="justify-content-center align-items-center text-center text-white-50">Kullanıcı Oluşturun</h1>
+                    {% csrf_token %}
+                    {{form}}
+                    <input type="submit" value="Oluştur" class="btn btn-outline-danger mt-3">
+                </form>
+            </div>
+        </div>
+    </header>
+    <footer class="Help p-5" id="footerHelp">
+        <div class="container">
+            <ul>
+                <li>
+                    <p>Sorularınız mı var? <span class="text-decoration-underline">0850-390-7444</span> numaralı
+                        telefonu arayın</p>
+                </li>
+            </ul>
+            <div class="row">
+                <div class="col-3 lh-lg">
+                    <ul>
+                        <li><a href="">SSS</a></li>
+                        <li><a href="">Çerez Tercihleri</a></li>
+                    </ul>
+                </div>
+                <div class="col-3 lh-lg">
+                    <ul>
+                        <li><a href="">Yardım Merkezi</a></li>
+                        <li><a href="">Kurumsal Bilgiler</a></li>
+                    </ul>
+                </div>
+                <div class="col-3 lh-lg">
+                    <ul>
+                        <li><a href="">Kullanım Koşulları</a></li>
+                    </ul>
+                </div>
+                <div class="col-3 lh-lg">
+                    <ul>
+                        <li><a href="">Gizlilik</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+{% endblock content %}
+
+
+

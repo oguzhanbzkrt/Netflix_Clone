@@ -1,0 +1,145 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block content %}
+
+<style>
+    #list1 {
+        color: white;
+        margin-top: 20px;
+        margin-left: 2rem;
+    }
+
+    section img {
+        width: 350px;
+        height: 200px;
+    }
+
+    #list {
+        color: white;
+        margin-top: 100px;
+        margin-left: 2rem;
+    }
+    #drop{
+        width: 30px;
+        height: 30px;
+        background: none;
+    }
+    #dropdown{
+        position: relative;
+    }
+    #icon{
+        position:absolute;
+        width: 30px;
+        height: 30px;
+        border-radius: 5px;
+        bottom: 0px;
+        left: -1.5px;
+    }
+    
+</style>
+
+<body>
+    <header class="moviePage">
+        <nav class="navbar navbar-expand-lg bg-opacity-100 text-white">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="{% url 'index' %}"><img id="netflixlogo" src="{% static 'img/logo.png' %}"
+                        alt=""></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav navbar-nav me-auto mb-2 mb-lg-0 ms-5">
+                        <a class="nav-link" aria-current="page" href="#">Ana Sayfa</a>
+                        <a class="nav-link" href="#">Diziler</a>
+                        <a class="nav-link" href="#">Filmler</a>
+                        <a class="nav-link" href="#">Yeni ve Popüler</a>
+                        <a class="nav-link" href="#">Listem</a>
+                        <a class="nav-link" href="#">Dile Göre Göz At</a>
+                    </div>
+                </div>
+
+                <form class="d-flex" role="search">
+                    <input action="{% url 'movies' %}" class="form-control me-2 text-bg-secondary" name="search" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-danger" type="submit">Search</button>
+                  </form>
+
+
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-search"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+                </svg> -->
+
+                <h3 class="me-4 ms-4">Çocuk</h3>
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-bell"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z" />
+                </svg> -->
+                <!-- <img class="me-4 ms-4" id="icon" src="{{user.resim.url}}" alt=""> -->
+
+                <div id="dropdown" class="btn-group dropstart">
+                    <button id="drop" class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img id="icon" src="{{user.resim.url}}" alt="">
+                    </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="{% url 'hesap' %}">Hesap</a></li>
+                      <li><a class="dropdown-item" href="{% url 'logout' %}">Oturumu Kapat</a></li>
+                    </ul>
+                </div>
+
+
+            </div>
+        </nav>
+        <div class="headerMovie">
+            <div class="container">
+                <div class="row justify-content-start align-items-center titanHeight">
+                    <div class="col-7 text-white">
+                        <img src="img/titans.webp" alt="">
+                        <h1 class="mt-4">4. Sezonu Şimdi İzleyin</h1>
+                        <h4 class="mt-4">Eski ortağı Batman ile yollarını ayıran Dick Grayson, bir akıl hocasına
+                            fazlasıyla ihtiyaç duyan bir grup sorunlu genç kahraman ile karşılaşır</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h1 id="list">Listem</h1>
+    </header>
+
+    <section class="myList text-white">
+        <div class="row">
+            {% for i in filmler %}
+            {% if i.kategori.isim == "Listem" %}
+            <div class="col-2 me-5">
+                <a class="text-decoration-none" href="">
+                    <img src="{{i.resim.url}}" alt="">
+                    <p class="text-white mt-3">{{i.isim}}</p>
+                </a>
+            </div>
+            {% else %}
+            {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+
+    <h1 id="list1">Netflixte Popüler</h1>
+    <section class="myList text-white">
+        <div class="row">
+            {% for i in filmler %}
+            {% if i.kategori.isim == "Netflixte Popüler" %}
+            <div class="col-2 me-5">
+                <a class="text-decoration-none" href="">
+                    <img src="{{i.resim.url}}" alt="">
+                    <p class="text-white mt-3">{{i.isim}}</p>
+                </a>
+            </div>
+            {% else %}
+            {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+</body>
+{% endblock content %}

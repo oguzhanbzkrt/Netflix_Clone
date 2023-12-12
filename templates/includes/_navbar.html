@@ -1,0 +1,21 @@
+{% load static %}
+
+<nav class="navbar">
+    <div class="container">
+        <a href="{% url 'index' %}"><img src="{% static 'img/logo.png' %}" alt=""></a>
+        <div class="d-flex">
+            <div class="dropdown me-4">
+                <button class="btn dropdown-toggle border-white text-white" type="button"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="{% static 'img/world.png' %}" alt="">
+                    Türkçe
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="index.html">Türkçe</a></li>
+                    <li><a class="dropdown-item" href="#">English</a></li>
+                </ul>
+            </div>
+            <a href="{% url 'login' %}"><button class="btn btn-danger">Oturum Aç</button></a>
+        </div>
+    </div>
+</nav>

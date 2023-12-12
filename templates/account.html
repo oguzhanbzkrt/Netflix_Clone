@@ -1,0 +1,165 @@
+{% extends "index.html" %}
+{% load static %}
+
+{% block content %}
+<body id="AccountSetting">
+    <header class="AccountSet">
+        <nav class="navbar" id="NavSet">
+                <a href="{% url 'index' %}"><img id="logo" src="{% static 'img/logo.png' %}" alt=""></a>
+                <img id="userlogo" src="{{user.resim.url}}" alt="">
+        </nav>
+    </header>
+    <section class="mainaccount">
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-4">
+                    <h1>Hesap</h1>
+                </div>  
+            </div>
+            <hr>
+        </div>
+    </section>
+    <section class="membership">
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <h3>ÜYELİK VE ÖDEMELER</h3>
+                    <a href="{% url 'delete' %}">
+                        <button type="button" class="btn btn-light">Üyeliği İptal Et</button>
+                    </a>
+                </div>
+                <div class="col-4">
+                    <p><b>{{user.email}}</b></p>
+                    <p>Parola : *******</p>
+                    <p>Telefon : {{user.tel}}</p>
+                    <hr id="hr">
+                    <div class="creditcard d-flex">
+                        <img src="img/MASTERCARD.png" alt="">
+                        <p class="ms-2"><b>**** **** **** 0521</b></p>
+                    </div>
+                    <p>Sonraki faturalama tarihiniz:22 Temmuz 2023 Cumartesi.</p>
+                </div>
+                <div class="col-5 text-end">
+                    <a href="#"><p>E-postayı değiştir</p></a>
+                    <a href=""><p>Parolayı değiştir</p></a>
+                    <a href=""><p>Telefon numarasını değiştir</p></a>
+                    <hr id="hr">
+                    <a href=""><p>Ödeme bilgilerini yönet</p></a>
+                    <a href=""><p>Yedek ödeme yöntemi ekle</p></a>
+                    <a href=""><p>Fatura ayrıntıları</p></a>
+                    <a href=""><p>Faturalama gününü değiştir</p></a>
+                    <hr id="hr">
+                    <a href=""><p>Hediye kartı ya da promosyon kodunu kullan</p></a>
+                    <a href=""><p>Hediye kartı alabileceğiniz yerler</p></a>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </section>
+    <section class="planDetail">
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <h3>PLAN AYRINTILARI</h3>
+                </div>
+                <div class="col-4">
+                    <div class="creditcard d-flex">
+                        <h5 class="">Özel</h5>
+                        <h5 id="ultraHD">ULTRA <b>HD</b></h5>
+                    </div>
+                </div>
+                <div class="col-5 text-end">
+                    <a href="#"><p>Planı değiştir</p></a>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </section>
+    <section class="privacy">
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <h3>GÜVENLİK VE GİZLİLİK</h3>
+                </div>
+                <div class="col-4">
+                    <div class="creditcard d-flex">
+                        <P>Bu hesaba kimlerin erişebileceğini kontrol edin, en son kullanılan cihazları görüntüleyin ve daha fazlasını yapın.</P>
+                    </div>
+                </div>
+                <div class="col-5 text-end">
+                    <a href="#"><p>Erişim izinlerini ve cihazları yönet</p></a>
+                    <a href="#"><p>Tüm cihazlarda oturumu kapat</p></a>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </section>
+    <section class="control">
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <h3>PROFİL VE EBEVEYN KONTROLLERİ</h3>
+                </div>
+                <div class="col-9">
+                    <div class="users d-flex">
+                        <img src="{{user.resim.url}}" alt="">
+                        <div class="usersNext">
+                            <p class="ms-3 text-black fw-bolder">{{user.isim}}</p>
+                            <p class="ms-3">Tüm yetişkinlik düzeyleri</p>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+            <hr>
+        </div>
+    </section>
+    <section class="setting">
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <h3>AYARLAR</h3>
+                </div>
+                <div class="col-5">
+                    <a href="#"><p>18+ İçeriklere Erişim PIN'i</p></a>
+                    <a href="#"><p>Profil transferi özelliğini kapat</p></a>
+                    <a href="#"><p>Teste katılım</p></a>
+                    <a href="#"><p>İçerik indirilen cihazları yönet</p></a>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </section>
+    <footer class="lastSection">
+            <ul>
+                <li><p>Sorularınız mı var? Bizi arayın</p></li>
+            </ul>
+            <div class="row">
+                <div class="col-2 lh-lg">
+                    <ul>
+                        <li><a href="">Selendirme ve Alt Yazı</a></li>
+                        <li><a href="">Medya Merkezi</a></li>
+                        <li><a href="">Gizlilik Bildirimi</a></li>
+                    </ul>
+                </div>
+                <div class="col-2 lh-lg">
+                    <ul>
+                        <li><a href="">Yardım Merkezi</a></li>
+                        <li><a href="">İş İmkanları</a></li> 
+                    </ul>
+                </div>   
+                <div class="col-2 lh-lg">
+                    <ul>
+                        <li><a href="">Hediye Kartları</a></li>
+                        <li><a href="">Çerez Tercihleri</a></li>
+                    </ul>
+                </div>
+                <div class="col-2 lh-lg">
+                    <ul>
+                        <li><a href="">Yatırımcı İlişkileri</a></li>
+                        <li><a href="">Kullanım Koşulları</a></li>
+                    </ul>
+                </div>
+            </div>
+    </footer>  
+</body>
+{% endblock content %}

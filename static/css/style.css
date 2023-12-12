@@ -1,0 +1,289 @@
+
+/********************************************************************* ANA SAYFA ***********************************************************************************************/
+
+body{
+    background-color: black;
+}
+/* .netflixHeader{
+    width: 100%;
+    height: 75vh;
+    background-image: linear-gradient(rgba(0, 0, 0, .7),rgba(0, 0, 0, .5)) , url(img/netflix_arkaplan_1.jpg);
+    background-position: center;
+    background-size: cover;
+} */
+.box{
+    width: auto;
+    height: 10px;
+    background-color: rgb(53, 53, 53);
+    
+}
+.container h1{
+    font-size: 50px;
+}
+
+#button-addon2{
+    width: 180px;
+}
+input::placeholder{
+    color: white !important;
+}
+.MyHeight{
+    height: 600px;
+}
+a img{
+    width: 150px;
+    height: 60px;
+}
+.accordion-item{
+    margin-top: .5rem;
+    background-color:  rgb(70, 68, 68);
+    border-bottom: 0;
+    color: white;
+}
+.accordion-button{
+    background-color: rgb(70, 68, 68);
+    color: white;
+    padding: 2rem;
+    transition: .7s;
+}
+/* .accordion-button::after {
+    background-image: url(arrow-down-sign-to-navigate.png);
+    color: white;
+} */
+/* .accordion-button:not(.collapsed)::after{
+    background-image: url(eksi.png);
+    color: white;
+} */
+.accordion-button:focus {
+    box-shadow: none;
+}
+.accordion-button:not(.collapsed){
+    background-color: rgb(70, 68, 68);
+    color: white;
+    box-shadow: rgb(0, 0, 0) 0px 0px 0px, rgb(0, 0, 0) 0px 0px 0px 1px;
+}
+.accordion-button:hover{
+    background-color: rgb(158, 160, 161);
+}
+.sec3 .col-6{
+    position: relative;
+}
+.sec3 video{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    max-width: 64%;
+    max-height: 47%;
+    top: 10%;
+    left: 18%;
+    overflow: hidden;
+    z-index: -1;
+}
+.sec1 .col-6{
+    position: relative;
+}
+.sec1 video{
+    position: absolute;
+    width: 650px;
+    height: 350px;
+    max-width: 100%;
+    max-height: 100%;
+    top: 10%;
+    overflow: hidden;
+    z-index: -1;
+}
+footer{
+    height: 40vh;
+}
+footer ul{
+    list-style-type: none;
+}
+footer ul li a , p{
+    color: whitesmoke;
+}
+
+/********************************************************************* OTURUM AÇMA SAYFASI ***********************************************************************************************/
+
+/* #BackImg{
+    background-image: linear-gradient(rgba(0, 0, 0, .7),rgba(0, 0, 0, .5)) , url(img/netflix_arkaplan.jpg);
+    background-position: center;
+    background-size: cover;
+} */
+header button a{
+    text-decoration: none;
+    color: white;
+}
+.netflixSignIn{
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+}
+.SignInBody .col-4{
+    padding-bottom: 8%;
+
+}
+.SignInBody .row>*{
+    padding-left: 4%;
+    padding-right: 4%;
+}
+.SignInBody a button{
+    width: 100%;
+}
+#floatingInput::placeholder{
+    color: rgb(126,134,141) !important;
+}
+#floatingPassword::placeholder{
+    color: rgb(126,134,141) !important; 
+}
+/* .SignInBody .form-control{
+    border: none;
+    color: black;
+}
+.form-floating>label{
+    color: white;
+} */
+footer ul li a , p{
+    color: rgb(148, 148, 148);
+}
+/* #footerHelp{
+    margin-top: 200px;
+    background-color: black;
+    opacity: 70%;
+    max-height: 200px;
+} */
+.form-check-input:checked{
+    background-color: rgb(126,134,141);
+    border-color: rgb(126,134,141);
+}
+
+
+/********************************************************************* PROFİL SAYFASI ***********************************************************************************************/
+
+.ProfileSet img{
+    width: 200px;
+    height: 200px;
+}
+.ProfileSet h1{
+    font-size: 70px;
+}
+.ProfileHeight{
+    height: 300px;
+}
+.ProfileSet .col-4{
+    margin-top: 150px;
+}
+.ProfileSet .col-3{
+    margin-top: 100px;
+}
+.btn-outline-secondary:hover{
+    background-color: transparent;
+    border-color: white;
+}
+.btn-group-lg > .btn, .btn-lg{
+    padding: 1rem 4rem 1rem 4rem;
+    font-size: 1.5rem;
+    border-radius: 0;
+    transition: none;
+}
+.ProfileSet a{
+    text-decoration: none;
+}
+.ProfileSet .col-2 .box h4:hover {
+    color: white !important;
+}
+.ProfileSet .col-2 a img:hover{
+    border: 3px solid white;
+}
+/********************************************************************* HESAP SAYFASI ***********************************************************************************************/
+#AccountSetting{
+    background-color: rgb(248, 248, 244);
+}
+#NavSet{
+    background-color: black;
+    
+}
+nav #logo{
+    width: 150px;
+    height: 50px;
+    margin-left: 2rem;
+}
+nav #userlogo{
+    width: 40px;
+    height: 40px;
+    margin-right: 2rem;
+    border-radius: 5px ;
+}
+.membership h3 , .planDetail h3 , .privacy h3 , .control h3 , .setting h3{
+    color: rgb(141, 141, 141);
+}
+.membership button{
+    width: 92%;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+.membership img{
+    height: 20px;
+}
+.membership a p , .planDetail a p , .privacy a p , .setting a p{
+    color: blue;
+}
+.membership .col-4 p , .privacy .col-4 p {
+    color: black;
+}
+#hr{
+    color: rgb(206, 203, 203);
+}
+#ultraHD{
+    margin-left: .3rem;
+    border: 2px solid black;
+}
+.control .col-9 img{
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+}
+.control .col-9 p{
+    margin-block-end: 0rem;
+}
+.lastSection{
+    max-height: 200px;
+}
+
+/********************************************************************* İÇERİK SAYFASI ***********************************************************************************************/
+
+/* #icon{
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+} */
+#netflixlogo{
+    margin-left: 2rem;
+    width: 100px;
+    height: 40px;
+}
+#navbarNavAltMarkup a{
+    color: white;
+}
+/* .moviePage{
+    width: 100%;
+    height: 90vh;
+    background-image: url(img/titan.webp);
+    background-position: center;
+    background-size: cover;
+} */
+.headerMovie .titanHeight{
+    height: 600px;
+}
+/* #list{
+    color: white;
+    margin-top: 100px;
+    margin-left: 2rem;
+} */
+.myList{
+    margin-left: 2rem;
+}
+
+
+
+form{
+    color: black;
+}
